@@ -10,11 +10,6 @@ export const ctrls: TCtrl[] = [
         onToggle: () => {},
     },
     {
-        activeLabel: 'Включить фары',
-        unActiveLabel: 'Выключить фары',
-        onToggle: () => {},
-    },
-    {
         activeLabel: 'Открыть двери',
         unActiveLabel: 'Закрыть двери',
         onToggle: () => {},

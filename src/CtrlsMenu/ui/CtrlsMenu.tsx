@@ -2,6 +2,7 @@ import { Modal, VStack } from '@project-1114/ui-kit';
 import { useState } from 'react';
 import { ctrls } from '../const/ctrls.ts';
 import { Ctrl } from '../../Ctrl/ui/Ctrl.tsx';
+import { CtrlLight } from '../../ctrls/CtrlLight';
 
 export const CtrlsMenu = () => {
     const [isOpen, setIsOpen] = useState(true);
@@ -17,6 +18,7 @@ export const CtrlsMenu = () => {
                         active={false}
                     />
                 ))}
+                <CtrlLight />
             </VStack>
         </Modal>
     );
