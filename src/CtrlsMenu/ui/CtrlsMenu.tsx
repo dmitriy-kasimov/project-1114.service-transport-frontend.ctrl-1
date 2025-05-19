@@ -1,24 +1,22 @@
-import { Modal, VStack } from '@project-1114/ui-kit';
+import { Modal, Text, VStack } from '@project-1114/ui-kit';
 import { useState } from 'react';
-import { ctrls } from '../const/ctrls.ts';
-import { Ctrl } from '../../Ctrl/ui/Ctrl.tsx';
+
 import { CtrlLight } from '../../ctrls/CtrlLight';
+import { CtrlDoors } from '../../ctrls/CtrlDoors';
+import { CtrlEngine } from '../../ctrls/CtrlEngine';
 
 export const CtrlsMenu = () => {
     const [isOpen, setIsOpen] = useState(true);
 
     return (
         <Modal isOpen={isOpen} onClose={() => setIsOpen(false)}>
-            <VStack gap={'m'}>
-                {ctrls.map((ctrl) => (
-                    <Ctrl
-                        activeLabel={ctrl.activeLabel}
-                        unActiveLabel={ctrl.unActiveLabel}
-                        onToggle={ctrl.onToggle}
-                        active={false}
-                    />
-                ))}
-                <CtrlLight />
+            <VStack gap={'l'} max align={'center'}>
+                <Text size={'xl'}>Меню управления Т/С</Text>
+                <VStack gap={'m'}>
+                    <CtrlEngine />
+                    <CtrlLight />
+                    <CtrlDoors />
+                </VStack>
             </VStack>
         </Modal>
     );
