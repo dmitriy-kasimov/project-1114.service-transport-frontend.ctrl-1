@@ -1,7 +1,7 @@
-import { CtrlsMenu } from './CtrlsMenu';
+import { CtrlMenu } from './CtrlMenu';
 
 function App() {
-    return <CtrlsMenu />;
+    return <CtrlMenu />;
 }
 
 export default App;

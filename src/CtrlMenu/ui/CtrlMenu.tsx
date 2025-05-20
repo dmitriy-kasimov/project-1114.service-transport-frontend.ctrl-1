@@ -1,11 +1,11 @@
 import { Modal, Text, VStack } from '@project-1114/ui-kit';
 import { useState } from 'react';
 
-import { CtrlLight } from '../../ctrls/CtrlLight';
+import { CtrlLights } from '../../ctrls/CtrlLights';
 import { CtrlDoors } from '../../ctrls/CtrlDoors';
 import { CtrlEngine } from '../../ctrls/CtrlEngine';
 
-export const CtrlsMenu = () => {
+export const CtrlMenu = () => {
     const [isOpen, setIsOpen] = useState(true);
 
     return (
@@ -14,7 +14,7 @@ export const CtrlsMenu = () => {
                 <Text size={'xl'}>Меню управления Т/С</Text>
                 <VStack gap={'m'}>
                     <CtrlEngine />
-                    <CtrlLight />
+                    <CtrlLights />
                     <CtrlDoors />
                 </VStack>
             </VStack>
