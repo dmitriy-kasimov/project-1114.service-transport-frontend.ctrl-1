@@ -10,9 +10,9 @@ export const CtrlMenu = () => {
 
     return (
         <Modal isOpen={isOpen} onClose={() => setIsOpen(false)}>
-            <VStack gap={'l'} max align={'center'}>
+            <VStack gap={'l'} max align={'center'} style={{ width: 450 }}>
                 <Text size={'xl'}>Меню управления Т/С</Text>
-                <VStack gap={'m'}>
+                <VStack gap={'m'} max>
                     <CtrlEngine />
                     <CtrlLights />
                     <CtrlDoors />
