@@ -10,4 +10,16 @@ export default defineConfig({
             svgrOptions: { exportType: 'default' },
         }),
     ],
+    resolve: {
+        alias: {
+            '@': '/src',
+        },
+    },
+    base: './',
+    build: {
+        outDir: 'A:/Alone/PROJECTS/GTA5/Project-1114/server/resources/service-transport/frontend',
+        emptyOutDir: true,
+        minify: 'esbuild',
+        reportCompressedSize: false,
+    },
 });
