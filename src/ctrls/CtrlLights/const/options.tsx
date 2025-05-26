@@ -8,10 +8,11 @@ import {
 import { Text } from '@project-1114/ui-kit';
 import { lightMods } from './lightMods.ts';
 import InfoIcon from '../assets/info.svg?react';
+import { ELightMods } from '@/ctrls/CtrlLights/const/ELightMods.ts';
 
-export const options: ListBoxItem<string>[] = Object.entries(lightMods).map(
+export const options: ListBoxItem<ELightMods>[] = Object.entries(lightMods).map(
     ([value, mode]) => ({
-        value,
+        value: +value as ELightMods,
         content: (
             <HStack align={'center'} justify={'between'} gap={'l'}>
                 <Text>{mode.label}</Text>
