@@ -1,7 +1,9 @@
 import type { FC } from 'react';
-import { useTriggerClientEventQuery } from '@/helpers/useTriggerClientEventQuery.ts';
 import { Switcher, Text } from '@project-1114/ui-kit';
-import { useTriggerClientEventMutation } from '@/helpers/useTriggerClientEventMutation.ts';
+import {
+    useTriggerClientEventQuery,
+    useTriggerClientEventMutation,
+} from '@project-1114/platform-frontend';
 
 export const EngineSwitcher: FC = () => {
     const {
