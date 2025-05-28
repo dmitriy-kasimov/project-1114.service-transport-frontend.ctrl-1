@@ -1,10 +1,12 @@
 import type { FC } from 'react';
+
 import { HStack, Switcher, Text } from '@project-1114/ui-kit';
 import {
     useTriggerClientEventMutation,
     useTriggerClientEventQuery,
 } from '@project-1114/platform-frontend';
-import { EDoors } from '@/ctrls/CtrlDoors/const/EDoors.ts';
+
+import { EDoors } from '../../const/EDoors.ts';
 
 export const ToggleTrunk: FC = () => {
     const { data, isLoading, error } = useTriggerClientEventQuery<

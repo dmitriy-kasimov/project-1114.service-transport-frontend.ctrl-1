@@ -1,9 +1,10 @@
 import { Card, HStack, Icon, VStack } from '@project-1114/ui-kit';
+
 import DoorsIcon from '../../assets/doors.svg?react';
-import { ToggleDoorDriverFront } from '@/ctrls/CtrlDoors/ui/ToggleDoorsDetail/ToggleDoorDriverFront.tsx';
-import { ToggleDoorDriverRear } from '@/ctrls/CtrlDoors/ui/ToggleDoorsDetail/ToggleDoorDriverRear.tsx';
-import { ToggleDoorPassengerFront } from '@/ctrls/CtrlDoors/ui/ToggleDoorsDetail/ToggleDoorPassengerFront.tsx';
-import { ToggleDoorPassengerRear } from '@/ctrls/CtrlDoors/ui/ToggleDoorsDetail/ToggleDoorPassengerRear.tsx';
+import { ToggleDoorDriverFront } from './ToggleDoorDriverFront.tsx';
+import { ToggleDoorDriverRear } from './ToggleDoorDriverRear.tsx';
+import { ToggleDoorPassengerFront } from './ToggleDoorPassengerFront.tsx';
+import { ToggleDoorPassengerRear } from './ToggleDoorPassengerRear.tsx';
 
 export const ToggleDoorsDetail = () => {
     return (
