@@ -1,6 +1,6 @@
 import { ToggleDoorsDetail } from './ToggleDoorsDetail.tsx';
 import { Accordion, VStack, Text } from '@project-1114/ui-kit';
-import { ToggleDoorsGeneral } from '@/ctrls/CtrlDoors/ui/ToggleDoorsGeneral.tsx';
+import { ToggleDoorsGeneral } from '@/ctrls/CtrlDoors/ui/ToggleDoorsGeneral/ToggleDoorsGeneral.tsx';
 
 export const CtrlDoors = () => {
     return (
