@@ -1,9 +1,10 @@
-import { ListBox, Text } from '@project-1114/ui-kit';
-
-import { useTriggerClientEventMutation } from '@project-1114/platform-frontend';
-import { options } from '@/ctrls/CtrlLights/const/options.tsx';
-import { ELightMods } from '@/ctrls/CtrlLights/const/ELightMods.ts';
 import type { FC } from 'react';
+
+import { ListBox, Text } from '@project-1114/ui-kit';
+import { useTriggerClientEventMutation } from '@project-1114/platform-frontend';
+
+import { options } from '../const/options.tsx';
+import { ELightMods } from '../const/ELightMods.ts';
 
 type ListLightModsProps = {
     initialValue: ELightMods;

@@ -1,6 +1,7 @@
 import { HStack, Skeleton, Text } from '@project-1114/ui-kit';
-import { EngineSwitcher } from '@/ctrls/CtrlEngine/ui/EngineSwitcher.tsx';
 import { useTriggerClientEventQuery } from '@project-1114/platform-frontend';
+
+import { EngineSwitcher } from './EngineSwitcher.tsx';
 
 export const CtrlEngine = () => {
     const { data, isLoading, error } =

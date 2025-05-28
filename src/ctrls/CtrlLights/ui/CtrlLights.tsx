@@ -1,7 +1,8 @@
 import { HStack, Skeleton, Text } from '@project-1114/ui-kit';
-import { ListLightMods } from '@/ctrls/CtrlLights/ui/ListLightMods.tsx';
 import { useTriggerClientEventQuery } from '@project-1114/platform-frontend';
-import { ELightMods } from '@/ctrls/CtrlLights/const/ELightMods.ts';
+
+import { ListLightMods } from './ListLightMods.tsx';
+import { ELightMods } from '../const/ELightMods.ts';
 
 export const CtrlLights = () => {
     const { data, isLoading, error } =
