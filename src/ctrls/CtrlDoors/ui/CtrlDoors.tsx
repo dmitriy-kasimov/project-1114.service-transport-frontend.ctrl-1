@@ -1,4 +1,4 @@
-import { ToggleDoorsDetail } from './ToggleDoorsDetail.tsx';
+import { ToggleDoorsDetail } from './ToggleDoorsDetail/ToggleDoorsDetail.tsx';
 import { Accordion, VStack, Text } from '@project-1114/ui-kit';
 import { ToggleDoorsGeneral } from '@/ctrls/CtrlDoors/ui/ToggleDoorsGeneral/ToggleDoorsGeneral.tsx';
 
