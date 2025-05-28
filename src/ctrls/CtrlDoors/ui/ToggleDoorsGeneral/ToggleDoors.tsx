@@ -1,10 +1,8 @@
 import type { FC } from 'react';
 
-import { HStack, Switcher, Text } from '@project-1114/ui-kit';
-import {
-    useTriggerClientEventMutation,
-    useTriggerClientEventQuery,
-} from '@project-1114/platform-frontend';
+import { HStack, Skeleton, Text } from '@project-1114/ui-kit';
+import { useTriggerClientEventQuery } from '@project-1114/platform-frontend';
+import { ToggleDoorsSwitcher } from '@/ctrls/CtrlDoors/ui/ToggleDoorsGeneral/ToggleDoorsSwitcher.tsx';
 
 export const ToggleDoors: FC = () => {
     const { data, isLoading, error } = useTriggerClientEventQuery<boolean>(
@@ -12,35 +10,13 @@ export const ToggleDoors: FC = () => {
         'c:f:getDoorsState',
     );
 
-    const [
-        handler,
-        {
-            data: toggledDoorsState,
-            isLoading: toggledDoorsIsLoading,
-            error: toggledDoorsError,
-        },
-    ] = useTriggerClientEventMutation<boolean>(
-        'f:c:toggleDoorsState',
-        'c:f:toggleDoorsState',
-    );
-
-    if (error) return <Text>{error}</Text>;
-    else if (toggledDoorsError) return <Text>{toggledDoorsError}</Text>;
-    else if (!data) return <Text>no data</Text>;
-
-    const handleSwitchDoorsState = () => {
-        handler(null);
-    };
-
+    if (isLoading) return <Skeleton width={64} height={32} border={'50%'} />;
+    else if (error) return <Text>{error}</Text>;
+    else if (data === null) return <Text>no data</Text>;
     return (
         <HStack align={'center'} gap={'m'}>
             <Text size={'l'}>Двери:</Text>
-            <Switcher
-                id={'doors'}
-                value={toggledDoorsState || data}
-                onChange={handleSwitchDoorsState}
-                disabled={isLoading || toggledDoorsIsLoading}
-            />
+            <ToggleDoorsSwitcher initialValue={data} />
         </HStack>
     );
 };
