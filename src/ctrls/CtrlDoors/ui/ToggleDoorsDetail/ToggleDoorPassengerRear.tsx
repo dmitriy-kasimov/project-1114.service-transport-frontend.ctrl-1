@@ -1,43 +1,20 @@
 import type { FC } from 'react';
-import { Switcher, Text } from '@project-1114/ui-kit';
-import {
-    useTriggerClientEventMutation,
-    useTriggerClientEventQuery,
-} from '@project-1114/platform-frontend';
-import { EDoors } from '@/ctrls/CtrlDoors/const/EDoors.ts';
+
+import { Skeleton, Text } from '@project-1114/ui-kit';
+import { useTriggerClientEventQuery } from '@project-1114/platform-frontend';
+
+import { EDoors } from '../../const/EDoors.ts';
+import { ToggleDoorPassengerRearSwitcher } from '@/ctrls/CtrlDoors/ui/ToggleDoorsDetail/ToggleDoorPassengerRearSwitcher.tsx';
 
 export const ToggleDoorPassengerRear: FC = () => {
     const { data, isLoading, error } = useTriggerClientEventQuery<
         boolean,
         EDoors
-    >('f:c:getDoorState', 'c:f:getDoorState', EDoors.PassengerRear);
+    >('getDoorState', EDoors.PassengerRear);
 
-    const [
-        handler,
-        {
-            data: toggledDoorState,
-            isLoading: toggledDoorIsLoading,
-            error: toggledDoorError,
-        },
-    ] = useTriggerClientEventMutation<boolean, EDoors>(
-        'f:c:toggleDoorState',
-        'c:f:toggleDoorState',
-    );
+    if (isLoading) return <Skeleton width={64} height={32} border={'50%'} />;
+    else if (error) return <Text>{error}</Text>;
+    else if (data === null) return <Text>no data</Text>;
 
-    if (error) return <Text>{error}</Text>;
-    else if (toggledDoorError) return <Text>{toggledDoorError}</Text>;
-    else if (!data) return <Text>no data</Text>;
-
-    const handleSwitch = () => {
-        handler(EDoors.PassengerRear);
-    };
-
-    return (
-        <Switcher
-            id={`${EDoors.PassengerRear}`}
-            value={toggledDoorState || data}
-            onChange={handleSwitch}
-            disabled={isLoading || toggledDoorIsLoading}
-        />
-    );
+    return <ToggleDoorPassengerRearSwitcher initialValue={data} />;
 };
