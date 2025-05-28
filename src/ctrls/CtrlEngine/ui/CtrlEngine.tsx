@@ -3,10 +3,8 @@ import { EngineSwitcher } from '@/ctrls/CtrlEngine/ui/EngineSwitcher.tsx';
 import { useTriggerClientEventQuery } from '@project-1114/platform-frontend';
 
 export const CtrlEngine = () => {
-    const { data, isLoading, error } = useTriggerClientEventQuery<boolean>(
-        'f:c:getEngineState',
-        'c:f:getEngineState',
-    );
+    const { data, isLoading, error } =
+        useTriggerClientEventQuery<boolean>('getEngineState');
 
     if (isLoading) return <Skeleton width={32} height={64} border={'50%'} />;
     else if (error) return <Text>{error}</Text>;

@@ -7,10 +7,7 @@ type EngineSwitcherProps = {
 };
 export const EngineSwitcher: FC<EngineSwitcherProps> = ({ initialValue }) => {
     const [handle, { data, isLoading, error }] =
-        useTriggerClientEventMutation<boolean>(
-            'f:c:toggleEngineState',
-            'c:f:toggleEngineState',
-        );
+        useTriggerClientEventMutation<boolean>('toggleEngineState');
 
     if (error) return <Text>{error}</Text>;
     return (

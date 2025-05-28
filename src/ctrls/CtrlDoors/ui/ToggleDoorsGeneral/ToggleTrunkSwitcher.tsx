@@ -13,7 +13,7 @@ export const ToggleTrunkSwitcher: FC<ToggleHoodSwitcherProps> = ({
     const [handler, { data, isLoading, error }] = useTriggerClientEventMutation<
         boolean,
         EDoors
-    >('f:c:toggleDoorState', 'c:f:toggleDoorState');
+    >('toggleDoorState');
 
     if (error) return <Text>{error}</Text>;
     return (

@@ -4,10 +4,8 @@ import { useTriggerClientEventQuery } from '@project-1114/platform-frontend';
 import { ELightMods } from '@/ctrls/CtrlLights/const/ELightMods.ts';
 
 export const CtrlLights = () => {
-    const { data, isLoading, error } = useTriggerClientEventQuery<ELightMods>(
-        'f:c:getLightsState',
-        'c:f:getLightsState',
-    );
+    const { data, isLoading, error } =
+        useTriggerClientEventQuery<ELightMods>('getLightsState');
 
     if (isLoading)
         return <Skeleton width={'100%'} height={40} border={'8px'} />;

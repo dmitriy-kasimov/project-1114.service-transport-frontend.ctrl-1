@@ -12,7 +12,7 @@ export const ListLightMods: FC<ListLightModsProps> = ({ initialValue }) => {
     const [handle, { data, isLoading, error }] = useTriggerClientEventMutation<
         ELightMods,
         ELightMods
-    >('f:c:setLightsState', 'c:f:setLightsState');
+    >('setLightsState');
 
     if (error) return <Text>{error}</Text>;
     return (

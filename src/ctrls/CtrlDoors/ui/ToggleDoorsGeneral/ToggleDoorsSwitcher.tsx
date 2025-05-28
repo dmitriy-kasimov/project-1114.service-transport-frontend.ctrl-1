@@ -10,10 +10,7 @@ export const ToggleDoorsSwitcher: FC<ToggleDoorsSwitcherProps> = ({
     initialValue,
 }) => {
     const [handler, { data, isLoading, error }] =
-        useTriggerClientEventMutation<boolean>(
-            'f:c:toggleDoorsState',
-            'c:f:toggleDoorsState',
-        );
+        useTriggerClientEventMutation<boolean>('toggleDoorsState');
 
     if (error) return <Text>{error}</Text>;
     return (

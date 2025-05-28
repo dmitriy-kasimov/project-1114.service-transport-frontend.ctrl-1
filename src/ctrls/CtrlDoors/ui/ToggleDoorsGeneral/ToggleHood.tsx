@@ -10,7 +10,7 @@ export const ToggleHood: FC = () => {
     const { data, isLoading, error } = useTriggerClientEventQuery<
         boolean,
         EDoors
-    >('f:c:getDoorState', 'c:f:getDoorState', EDoors.Hood);
+    >('getDoorState', EDoors.Hood);
 
     if (isLoading) return <Skeleton width={64} height={32} border={'50%'} />;
     else if (error) return <Text>{error}</Text>;

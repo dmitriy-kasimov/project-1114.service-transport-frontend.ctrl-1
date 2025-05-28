@@ -5,10 +5,8 @@ import { useTriggerClientEventQuery } from '@project-1114/platform-frontend';
 import { ToggleDoorsSwitcher } from '@/ctrls/CtrlDoors/ui/ToggleDoorsGeneral/ToggleDoorsSwitcher.tsx';
 
 export const ToggleDoors: FC = () => {
-    const { data, isLoading, error } = useTriggerClientEventQuery<boolean>(
-        'f:c:getDoorsState',
-        'c:f:getDoorsState',
-    );
+    const { data, isLoading, error } =
+        useTriggerClientEventQuery<boolean>('getDoorsState');
 
     if (isLoading) return <Skeleton width={64} height={32} border={'50%'} />;
     else if (error) return <Text>{error}</Text>;
