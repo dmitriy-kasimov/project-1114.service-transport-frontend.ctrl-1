@@ -2,7 +2,8 @@ import type { FC } from 'react';
 
 import { HStack, Skeleton, Text } from '@project-1114/ui-kit';
 import { useTriggerClientEventQuery } from '@project-1114/platform-frontend';
-import { ToggleDoorsSwitcher } from '@/ctrls/CtrlDoors/ui/ToggleDoorsGeneral/ToggleDoorsSwitcher.tsx';
+
+import { ToggleDoorsSwitcher } from './ToggleDoorsSwitcher.tsx';
 
 export const ToggleDoors: FC = () => {
     const { data, isLoading, error } =

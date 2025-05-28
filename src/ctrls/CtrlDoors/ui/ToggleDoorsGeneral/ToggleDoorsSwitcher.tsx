@@ -1,4 +1,5 @@
 import type { FC } from 'react';
+
 import { useTriggerClientEventMutation } from '@project-1114/platform-frontend';
 import { Switcher, Text } from '@project-1114/ui-kit';
 

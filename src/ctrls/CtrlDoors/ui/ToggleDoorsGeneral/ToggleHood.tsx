@@ -3,8 +3,8 @@ import type { FC } from 'react';
 import { HStack, Skeleton, Text } from '@project-1114/ui-kit';
 import { useTriggerClientEventQuery } from '@project-1114/platform-frontend';
 
+import { ToggleHoodSwitcher } from './ToggleHoodSwitcher.tsx';
 import { EDoors } from '../../const/EDoors.ts';
-import { ToggleHoodSwitcher } from '@/ctrls/CtrlDoors/ui/ToggleDoorsGeneral/ToggleHoodSwitcher.tsx';
 
 export const ToggleHood: FC = () => {
     const { data, isLoading, error } = useTriggerClientEventQuery<

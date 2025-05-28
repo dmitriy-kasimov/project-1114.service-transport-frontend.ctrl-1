@@ -3,8 +3,8 @@ import type { FC } from 'react';
 import { HStack, Skeleton, Text } from '@project-1114/ui-kit';
 import { useTriggerClientEventQuery } from '@project-1114/platform-frontend';
 
+import { ToggleTrunkSwitcher } from './ToggleTrunkSwitcher.tsx';
 import { EDoors } from '../../const/EDoors.ts';
-import { ToggleTrunkSwitcher } from '@/ctrls/CtrlDoors/ui/ToggleDoorsGeneral/ToggleTrunkSwitcher.tsx';
 
 export const ToggleTrunk: FC = () => {
     const { data, isLoading, error } = useTriggerClientEventQuery<
