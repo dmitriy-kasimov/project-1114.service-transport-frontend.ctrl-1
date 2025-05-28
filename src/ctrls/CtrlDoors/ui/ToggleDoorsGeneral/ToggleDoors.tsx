@@ -6,12 +6,8 @@ import {
     useTriggerClientEventQuery,
 } from '@project-1114/platform-frontend';
 
-import { EDoors } from '../../const/EDoors.ts';
-
-type TDoorsState = Record<Partial<EDoors>, boolean>;
-
 export const ToggleDoors: FC = () => {
-    const { data, isLoading, error } = useTriggerClientEventQuery<TDoorsState>(
+    const { data, isLoading, error } = useTriggerClientEventQuery<boolean>(
         'f:c:getDoorsState',
         'c:f:getDoorsState',
     );
@@ -32,10 +28,6 @@ export const ToggleDoors: FC = () => {
     else if (toggledDoorsError) return <Text>{toggledDoorsError}</Text>;
     else if (!data) return <Text>no data</Text>;
 
-    const countDoors = 4;
-    const countLockedDoors = Object.values(data).filter(Boolean).length;
-    const doorsIsLocked = countLockedDoors === countDoors;
-
     const handleSwitchDoorsState = () => {
         handler(null);
     };
@@ -45,7 +37,7 @@ export const ToggleDoors: FC = () => {
             <Text size={'l'}>Двери:</Text>
             <Switcher
                 id={'doors'}
-                value={toggledDoorsState || doorsIsLocked}
+                value={toggledDoorsState || data}
                 onChange={handleSwitchDoorsState}
                 disabled={isLoading || toggledDoorsIsLoading}
             />
