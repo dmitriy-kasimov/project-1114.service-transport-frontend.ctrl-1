@@ -11,17 +11,15 @@ type ToggleDoorDriverFrontSwitcherProps = {
 export const ToggleDoorDriverRearSwitcher: FC<
     ToggleDoorDriverFrontSwitcherProps
 > = ({ initialValue }) => {
-    const [handler, { data, isLoading, error }] = useTriggerClientEventMutation<
-        boolean,
-        EDoors
-    >('toggleDoorState');
+    const [handler, { data, isLoading, error }] =
+        useTriggerClientEventMutation<boolean>('toggleDoorDriverRearState');
 
     if (error) return <Text>{error}</Text>;
     return (
         <Switcher
             id={`${EDoors.DriverRear}`}
-            value={data || initialValue}
-            onChange={() => handler(EDoors.DriverRear)}
+            value={data ?? initialValue}
+            onChange={() => handler(null)}
             disabled={isLoading}
         />
     );

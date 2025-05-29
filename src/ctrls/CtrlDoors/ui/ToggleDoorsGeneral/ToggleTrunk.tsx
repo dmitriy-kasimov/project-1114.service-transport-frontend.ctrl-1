@@ -10,7 +10,7 @@ export const ToggleTrunk: FC = () => {
     const { data, isLoading, error } = useTriggerClientEventQuery<
         boolean,
         EDoors
-    >('getDoorState', EDoors.Trunk);
+    >('getTrunkState', EDoors.Trunk);
 
     if (isLoading) return <Skeleton width={64} height={32} border={'50%'} />;
     else if (error) return <Text>{error}</Text>;

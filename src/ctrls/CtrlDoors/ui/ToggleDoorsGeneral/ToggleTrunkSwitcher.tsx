@@ -12,17 +12,18 @@ type ToggleHoodSwitcherProps = {
 export const ToggleTrunkSwitcher: FC<ToggleHoodSwitcherProps> = ({
     initialValue,
 }) => {
-    const [handler, { data, isLoading, error }] = useTriggerClientEventMutation<
-        boolean,
-        EDoors
-    >('toggleDoorState');
+    const [handler, { data, isLoading, error }] =
+        useTriggerClientEventMutation<boolean>('toggleTrunkState');
 
     if (error) return <Text>{error}</Text>;
+    console.log('EDoors.Trunk');
+    console.log(`initial value: ${initialValue}`);
+    console.log(`data: ${data}`);
     return (
         <Switcher
             id={`${EDoors.Trunk}`}
-            value={data || initialValue}
-            onChange={() => handler(EDoors.Trunk)}
+            value={data ?? initialValue}
+            onChange={() => handler(null)}
             disabled={isLoading}
         />
     );

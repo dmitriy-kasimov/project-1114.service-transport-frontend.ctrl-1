@@ -3,14 +3,12 @@ import type { FC } from 'react';
 import { Skeleton, Text } from '@project-1114/ui-kit';
 import { useTriggerClientEventQuery } from '@project-1114/platform-frontend';
 
-import { EDoors } from '../../const/EDoors.ts';
 import { ToggleDoorPassengerRearSwitcher } from '@/ctrls/CtrlDoors/ui/ToggleDoorsDetail/ToggleDoorPassengerRearSwitcher.tsx';
 
 export const ToggleDoorPassengerRear: FC = () => {
-    const { data, isLoading, error } = useTriggerClientEventQuery<
-        boolean,
-        EDoors
-    >('getDoorState', EDoors.PassengerRear);
+    const { data, isLoading, error } = useTriggerClientEventQuery<boolean>(
+        'getDoorPassengerRearState',
+    );
 
     if (isLoading) return <Skeleton width={64} height={32} border={'50%'} />;
     else if (error) return <Text>{error}</Text>;

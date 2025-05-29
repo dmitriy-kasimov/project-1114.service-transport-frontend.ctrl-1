@@ -17,7 +17,7 @@ export default defineConfig({
     },
     base: './',
     build: {
-        outDir: 'A:/Alone/PROJECTS/GTA5/Project-1114/server/resources/service-transport/frontend',
+        outDir: 'E:/server/resources/service-transport/frontend',
         emptyOutDir: true,
         minify: 'esbuild',
         reportCompressedSize: false,
