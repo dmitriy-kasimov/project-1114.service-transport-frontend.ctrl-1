@@ -1,0 +1,7 @@
+.CtrlMenu{
+  position: absolute;
+  top: 25%;
+  left: calc(50vw - 225px);
+  /* коррекция положения элемента */
+  transform: translate(-50%, -50%);
+}

@@ -7,7 +7,7 @@ export const CtrlEngine = () => {
     const { data, isLoading, error } =
         useTriggerClientEventQuery<boolean>('getEngineState');
 
-    if (isLoading) return <Skeleton width={32} height={64} border={'50%'} />;
+    if (isLoading) return <Skeleton width={32} height={64} border={'16px'} />;
     else if (error) return <Text>{error}</Text>;
     else if (data === null) return <Text>no data</Text>;
     return (
