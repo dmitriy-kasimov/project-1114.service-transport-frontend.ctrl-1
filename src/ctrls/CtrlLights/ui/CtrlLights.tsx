@@ -9,7 +9,12 @@ export const CtrlLights = () => {
         useTriggerClientEventQuery<ELightMods>('getLightsState');
 
     if (isLoading)
-        return <Skeleton width={'100%'} height={40} border={'8px'} />;
+        return (
+            <HStack align={'center'} gap={'m'} max>
+                <Text size={'l'}>Фары:</Text>
+                <Skeleton width={'100%'} height={40} border={'8px'} />
+            </HStack>
+        );
     else if (error) return <Text>{error}</Text>;
     else if (data === null) return <Text>no data</Text>;
     return (

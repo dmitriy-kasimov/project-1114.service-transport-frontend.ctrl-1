@@ -9,7 +9,13 @@ export const ToggleDoors: FC = () => {
     const { data, isLoading, error } =
         useTriggerClientEventQuery<boolean>('getDoorsState');
 
-    if (isLoading) return <Skeleton width={64} height={32} border={'16px'} />;
+    if (isLoading)
+        return (
+            <HStack align={'center'} gap={'m'}>
+                <Text size={'l'}>Двери:</Text>
+                <Skeleton width={64} height={32} border={'16px'} />
+            </HStack>
+        );
     else if (error) return <Text>{error}</Text>;
     else if (data === null) return <Text>no data</Text>;
     return (

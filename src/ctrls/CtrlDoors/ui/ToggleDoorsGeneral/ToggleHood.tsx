@@ -12,7 +12,13 @@ export const ToggleHood: FC = () => {
         EDoors
     >('getHoodState', EDoors.Hood);
 
-    if (isLoading) return <Skeleton width={64} height={32} border={'16px'} />;
+    if (isLoading)
+        return (
+            <HStack align={'center'} gap={'m'}>
+                <Text size={'l'}>Капот:</Text>
+                <Skeleton width={64} height={32} border={'16px'} />
+            </HStack>
+        );
     else if (error) return <Text>{error}</Text>;
     else if (data === null) return <Text>no data</Text>;
     return (
